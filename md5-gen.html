@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MD5 Gen</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html">Barcode Gen</a>
+          <a class="navbar-item is-active is-tab">MD5 Gen</a>
+          <a class="navbar-item" href="qr-scan.html"> Scanner</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-light is-fullheight-with-navbar">
+      <div class="hero-body" style="justify-content: center">
+        <div class="card">
+          <div class="card-content">
+            <p class="title">MD5 Generator</p>
+
+            <form class="field mb-5">
+              <input
+                class="input mb-4"
+                type="text"
+                placeholder="Input value here"
+                maxlength="10"
+                name="input"
+                id="input"
+                required
+              />
+              <input
+                class="button is-primary is-fullwidth"
+                type="submit"
+                value="Generate"
+                id="submit"
+              />
+            </form>
+
+            <div>
+              <p class="">Full = <span id="result"></span></p>
+              <p class="">First 10 = <span id="first"></span></p>
+              <p class="">Last 10 = <span id="last"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      /* navbar toggle */
+      document.addEventListener("DOMContentLoaded", () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(
+          document.querySelectorAll(".navbar-burger"),
+          0
+        );
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach((el) => {
+          el.addEventListener("click", () => {
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle("is-active");
+            $target.classList.toggle("is-active");
+          });
+        });
+      });
+    </script>
+
+    <script src="md5.js"></script>
+  </body>
+</html>
